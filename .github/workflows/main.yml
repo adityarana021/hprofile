@@ -6,7 +6,7 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: actapp
-  ECS_SERVICE: vproapp-act-svc
+  ECS_SERVICE: vproapp-act-tdef-service-tidklvm0
   ECS_CLUSTER: vprapp-act
   ECS_TASK_DEFINITION: aws-files/taskdeffile.json
   CONTAINER_NAME: vproapp
@@ -37,7 +37,7 @@ jobs:
       - name: SonarCloud Scan
         run: |
           sonar-scanner \
-            -Dsonar.host.url=${{ secrets.SONAR_URL }} \
+            -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \
