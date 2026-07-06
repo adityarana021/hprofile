@@ -1,5 +1,7 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:127372371582:task-definition/vproapp-act-tdef:1",
+  "family": "vproapp-act-tdef",
+  "executionRoleArn": "arn:aws:iam::127372371582:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
   "containerDefinitions": [
     {
       "name": "vproapp",
@@ -33,44 +35,8 @@
       "systemControls": []
     }
   ],
-  "family": "vproapp-act-tdef",
-  "executionRoleArn": "arn:aws:iam::127372371582:role/ecsTaskExecutionRole",
-  "networkMode": "awsvpc",
-  "revision": 1,
   "volumes": [],
-  "status": "ACTIVE",
-  "requiresAttributes": [
-    {
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-    },
-    {
-      "name": "ecs.capability.execution-role-awslogs"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "name": "ecs.capability.execution-role-ecr-pull"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "name": "ecs.capability.task-eni"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-    }
-  ],
   "placementConstraints": [],
-  "compatibilities": [
-    "EC2",
-    "MANAGED_INSTANCES",
-    "FARGATE"
-  ],
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
@@ -80,8 +46,6 @@
   ],
   "cpu": "1024",
   "memory": "2048",
-  "registeredAt": "2026-07-06T09:25:45.012Z",
-  "registeredBy": "arn:aws:iam::127372371582:root",
   "enableFaultInjection": false,
   "tags": [
     {
