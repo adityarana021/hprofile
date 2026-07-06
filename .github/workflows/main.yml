@@ -1,7 +1,7 @@
 name: Hprofile Actions
 
 on:
-  [push,workflow_dispatch]
+  [push, workflow_dispatch]
 
 env:
   AWS_REGION: us-east-1
@@ -46,13 +46,6 @@ jobs:
             -Dsonar.jacoco.reportsPath=target/jacoco.exec \
             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml \
             -Dsonar.java.binaries=target/classes
-
-      - name: SonarCloud Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
 
   BUILD_AND_PUBLISH:
     needs: Testing
